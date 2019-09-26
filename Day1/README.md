@@ -23,7 +23,7 @@
 - docker pull eclipse-mosquitto
 - docker images 를 이용해 잘 설치되어있는지 확인
 
-## docker - mosquitto 실행
+## docker - mosquitto 실행(성공)
 ### run 컨테이너 실행
 ### stop 컨테이너 종료
 ### -i -t : 상호작용하기위한 옵션 (interactive)
@@ -36,10 +36,10 @@
 ### --name 컨테이너이름지정
 - docker run --name mosquitto -p 1883:1883 -p 9001:9001 -v /docker/conf/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -d eclipse-mosquitto
 
-## docker - mosquitto 저장/로드
+## docker - mosquitto 저장/로드(성공)
 - 저장 : docker save -o eclipse-mosquitto.tar eclipse-mosquitto:latest
 - 로드 : docker load -i eclipse-mosquitto.tar
 
-## 방화벽해제
-firewall-cmd --permanent --zone=public --add-port=1883/tcp
-firewall-cmd --reload
+## 방화벽해제(성공)
+- firewall-cmd --permanent --zone=public --add-port=1883/tcp
+- firewall-cmd --reload
