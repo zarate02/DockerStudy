@@ -17,24 +17,27 @@
 - systemctl start docker
 
 ## docker - mosquitto 설치(성공)
-### pull : 도커허브에서 가져오기
-### docker images : 도커이미지 확인
-### docker rmi : 도커이미지 삭제
 - docker pull eclipse-mosquitto
 - docker images 를 이용해 잘 설치되어있는지 확인
+## 명령어
+- pull : 도커허브에서 가져오기
+- docker images : 도커이미지 확인
+- docker rmi : 도커이미지 삭제
 
 ## docker - mosquitto 실행(성공)
-### run 컨테이너 실행
-### stop 컨테이너 종료
-### -i -t : 상호작용하기위한 옵션 (interactive)
-### -p : 포트포워딩 (port)
-### -v : 외부 파일 사용 (volume)
-### ps : 실행중인 컨테이너 조회, -a 전체 컨테이너 조회
-### rm : 컨테이너 삭제
-### docker rm 'docker ps -a -q' : 컨테이너 전체삭제
-### -d : 데몬
-### --name 컨테이너이름지정
 - docker run --name mosquitto -p 1883:1883 -p 9001:9001 -v /docker/conf/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -d eclipse-mosquitto
+
+## 명령어
+- run 컨테이너 실행
+- stop 컨테이너 종료
+- -i -t : 상호작용하기위한 옵션 (interactive)
+- -p : 포트포워딩 (port)
+- -v : 외부 파일 사용 (volume)
+- ps : 실행중인 컨테이너 조회, -a 전체 컨테이너 조회
+- rm : 컨테이너 삭제
+- docker rm 'docker ps -a -q' : 컨테이너 전체삭제
+- -d : 데몬
+- --name 컨테이너이름지정
 
 ## docker - mosquitto 저장/로드(성공)
 - 저장 : docker save -o eclipse-mosquitto.tar eclipse-mosquitto:latest
