@@ -5,4 +5,4 @@
 - docker - mosquitto 설치
 
 ## 2일차
-- docker - django 설치
+- docker - spring 설치
