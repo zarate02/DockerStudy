@@ -26,7 +26,6 @@
 
 ## docker - mosquitto 실행(성공)
 - docker run --name mosquitto -p 1883:1883 -p 9001:9001 -v /docker/conf/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -d eclipse-mosquitto
-- docker run --name mosquitto --net=host -v /docker/conf/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -d eclipse-mosquitto
 
 ## 명령어
 - run 컨테이너 실행

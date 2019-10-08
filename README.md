@@ -6,3 +6,6 @@
 
 ## 2일차
 - docker - spring 설치
+
+## 3일차
+- docker - nginx 설치
