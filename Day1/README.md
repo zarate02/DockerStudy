@@ -1,8 +1,8 @@
-# 1ÀÏÂ÷
+# 1ì¼ì°¨
 
-## docker ¼³Ä¡(¼º°ø)
+## docker ì„¤ì¹˜(ì„±ê³µ)
 
-- root °èÁ¤Á¢¼Ó
+- root ê³„ì •ì ‘ì†
 - cd /
 - mkdir rpm
 - yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -11,39 +11,39 @@
 - cd rpm
 - rpm -Uvh *
 
-## docker ½ÇÇà(¼º°ø)
+## docker ì‹¤í–‰(ì„±ê³µ)
 
 - systemctl enable docker
 - systemctl start docker
 
-## docker - mosquitto ¼³Ä¡(¼º°ø)
+## docker - mosquitto ì„¤ì¹˜(ì„±ê³µ)
 - docker pull eclipse-mosquitto
-- docker images ¸¦ ÀÌ¿ëÇØ Àß ¼³Ä¡µÇ¾îÀÖ´ÂÁö È®ÀÎ
-## ¸í·É¾î
-- pull : µµÄ¿Çãºê¿¡¼­ °¡Á®¿À±â
-- docker images : µµÄ¿ÀÌ¹ÌÁö È®ÀÎ
-- docker rmi : µµÄ¿ÀÌ¹ÌÁö »èÁ¦
+- docker images ë¥¼ ì´ìš©í•´ ì˜ ì„¤ì¹˜ë˜ì–´ìˆëŠ”ì§€ í™•ì¸
+## ëª…ë ¹ì–´
+- pull : ë„ì»¤í—ˆë¸Œì—ì„œ ê°€ì ¸ì˜¤ê¸°
+- docker images : ë„ì»¤ì´ë¯¸ì§€ í™•ì¸
+- docker rmi : ë„ì»¤ì´ë¯¸ì§€ ì‚­ì œ
 
-## docker - mosquitto ½ÇÇà(¼º°ø)
-- docker run --name mosquitto -p 1883:1883 -p 9001:9001 -v /docker/conf/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -d eclipse-mosquitto
-- docker run --name mosquitto --net=host -v /docker/conf/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -d eclipse-mosquitto
+## docker - mosquitto ì‹¤í–‰(ì„±ê³µ)
+- docker run --restart=always --name mosquitto -p 1883:1883 -p 9001:9001 -v /docker/conf/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -d eclipse-mosquitto
+- docker run --restart=always --name mosquitto --net=host -v /docker/conf/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -d eclipse-mosquitto
 
-## ¸í·É¾î
-- run ÄÁÅ×ÀÌ³Ê ½ÇÇà
-- stop ÄÁÅ×ÀÌ³Ê Á¾·á
-- -i -t : »óÈ£ÀÛ¿ëÇÏ±âÀ§ÇÑ ¿É¼Ç (interactive)
-- -p : Æ÷Æ®Æ÷¿öµù (port)
-- -v : ¿ÜºÎ ÆÄÀÏ »ç¿ë (volume)
-- ps : ½ÇÇàÁßÀÎ ÄÁÅ×ÀÌ³Ê Á¶È¸, -a ÀüÃ¼ ÄÁÅ×ÀÌ³Ê Á¶È¸
-- rm : ÄÁÅ×ÀÌ³Ê »èÁ¦
-- docker rm 'docker ps -a -q' : ÄÁÅ×ÀÌ³Ê ÀüÃ¼»èÁ¦
-- -d : µ¥¸ó
-- --name ÄÁÅ×ÀÌ³ÊÀÌ¸§ÁöÁ¤
+## ëª…ë ¹ì–´
+- run ì»¨í…Œì´ë„ˆ ì‹¤í–‰
+- stop ì»¨í…Œì´ë„ˆ ì¢…ë£Œ
+- -i -t : ìƒí˜¸ì‘ìš©í•˜ê¸°ìœ„í•œ ì˜µì…˜ (interactive)
+- -p : í¬íŠ¸í¬ì›Œë”© (port)
+- -v : ì™¸ë¶€ íŒŒì¼ ì‚¬ìš© (volume)
+- ps : ì‹¤í–‰ì¤‘ì¸ ì»¨í…Œì´ë„ˆ ì¡°íšŒ, -a ì „ì²´ ì»¨í…Œì´ë„ˆ ì¡°íšŒ
+- rm : ì»¨í…Œì´ë„ˆ ì‚­ì œ
+- docker rm 'docker ps -a -q' : ì»¨í…Œì´ë„ˆ ì „ì²´ì‚­ì œ
+- -d : ë°ëª¬
+- --name ì»¨í…Œì´ë„ˆì´ë¦„ì§€ì •
 
-## docker - mosquitto ÀúÀå/·Îµå(¼º°ø)
-- ÀúÀå : docker save -o eclipse-mosquitto.tar eclipse-mosquitto:latest
-- ·Îµå : docker load -i eclipse-mosquitto.tar
+## docker - mosquitto ì €ì¥/ë¡œë“œ(ì„±ê³µ)
+- ì €ì¥ : docker save -o eclipse-mosquitto.tar eclipse-mosquitto:latest
+- ë¡œë“œ : docker load -i eclipse-mosquitto.tar
 
-## ¹æÈ­º®ÇØÁ¦(¼º°ø)
+## ë°©í™”ë²½í•´ì œ(ì„±ê³µ)
 - firewall-cmd --permanent --zone=public --add-port=1883/tcp
 - firewall-cmd --reload
