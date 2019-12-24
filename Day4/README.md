@@ -1,6 +1,6 @@
 # 4일차
 
-## docker - mosquitto 설치(성공)
+## docker - postgres 설치(성공)
 - docker pull postgres
 
 ## 명령어
