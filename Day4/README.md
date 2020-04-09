@@ -8,3 +8,10 @@ docker run --restart=always --name ggrpdpostgres --net=host -v /GGRPD/docker/dbd
 
 ## 정보
 5432 // postgres // 비번
+
+## 권한부여
+- docker exec -it ggrpdpostgres bash
+- su postgres
+- psql
+- CREATE ROLE wini LOGIN CREATEDB PASSWORD 'wini00';
+
