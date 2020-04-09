@@ -6,3 +6,6 @@ docker run -d --net=host --name mongodb_server -e MONGO_INITDB_ROOT_USERNAME=aim
 ## 방화벽해제(성공)
 - firewall-cmd --permanent --zone=public --add-port=27017/tcp
 - firewall-cmd --reload
+
+## 접속
+dbname = admin / id = aimyon / pw = aimyon00
