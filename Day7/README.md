@@ -2,9 +2,7 @@
 
 ## 로그관리
 
-<code>
-<pre>
-/var/lib/docker/containers/*/*.log {
+<code><pre>/var/lib/docker/containers/*/*.log {
   rotate 7
   daily
   compress
@@ -13,5 +11,4 @@
   delaycompress
   copytruncate
 }
-</pre>
-</code>
+</pre></code>
