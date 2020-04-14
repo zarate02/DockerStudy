@@ -25,3 +25,11 @@
 /usr/sbin/logrotate -f /etc/logrotate.conf
 </code>
 </pre>
+
+### sudo crontab -e
+
+<pre>
+<code>
+0 0 * * * /usr/sbin/logrotate -f /etc/logrotate.conf
+</code>
+</pre>
