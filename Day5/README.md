@@ -43,6 +43,7 @@ RUN rabbitmq-plugins enable --offline rabbitmq_mqtt
 - rabbitmqctl start_app
 - firewall-cmd --permanent --zone=public --add-port=15672/tcp
 - firewall-cmd --reload
+- rabbitmqctl set_policy ha-all "^ha\." '{"ha-mode":"all"}'
 
 [TAR파일화]
 
