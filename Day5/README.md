@@ -28,7 +28,7 @@ RUN rabbitmq-plugins enable --offline rabbitmq_mqtt
 
 [WEB]
 
-- docker run --restart=always --add-host dgcs:127.0.0.1 --name rmq --net=host -e RABBITMQ_NODENAME='rabbit@dgcs' -e RABBITMQ_ERLANG_COOKIE='KXDSVKZWAUEKCOVNPALE' -d rbmq
+-docker run --restart=always --add-host dgcs1:192.168.1.78 --add-host dgcs2:192.168.1.175 --add-host dgcs3:192.168.1.74 --name rmq --net=host -e RABBITMQ_NODENAME='rabbit@dgcs3' -e RABBITMQ_ERLANG_COOKIE='KXDSVKZWAUEKCOVNPALE' -d rbmq
 - firewall-cmd --permanent --zone=public --add-port=4369/tcp
 - firewall-cmd --permanent --zone=public --add-port=25672/tcp
 - firewall-cmd --reload
