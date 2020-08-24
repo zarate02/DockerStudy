@@ -19,3 +19,19 @@ docker run \
 -e EMQ_NODE__COOKIE=ef16498f66804df1cc6172f6996d5492 \
 emqx/emqx:v3.2.2
 </pre></code>
+
+
+<pre><code>
+docker run \
+--restart=always \
+-d --name emqx \
+--net=host \
+-e EMQX_NAME=emqx69 \
+-e EMQX_HOST=192.168.1.69 \
+-e EMQX_NODE__NAME=emqx69@192.168.1.69 \
+-e EMQX_CLUSTER__NAME=emqxcl \
+-e EMQX_CLUSTER__DISCOVERY=static \
+-e EMQX_CLUSTER__STATIC__SEEDS=emqx70@192.168.1.70,emqx69@192.168.1.69 \
+-e EMQ_NODE__COOKIE=emqxsecretcookie \
+emqx/emqx:v4.1.3
+</pre></code>
