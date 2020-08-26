@@ -1,6 +1,4 @@
-# 1일차
-
-## docker 설치(성공)
+## docker 설치
 
 - root 계정접속
 - cd /
@@ -11,14 +9,31 @@
 - cd rpm
 - rpm -Uvh *
 
-## docker 실행(성공)
+## docker 실행
 
 - systemctl enable docker
 - systemctl start docker
 
+## 권한부여
+
+- sudo usermod -aG docker $USER
+
+## docker-compose 설치
+
+- wget https://github.com/docker/compose/releases/download/1.26.0/docker-compose-Linux-x86_64
+- mv docker-compose-Linux-x86_64 docker-compose 
+- sudo mv docker-compose /usr/local/bin/ 
+- sudo chmod +x /usr/local/bin/docker-compose
+
+## docker-compose 실행
+
+- 
+
 ## docker - mosquitto 설치(성공)
+
 - docker pull eclipse-mosquitto
 - docker images 를 이용해 잘 설치되어있는지 확인
+
 ## 명령어
 - pull : 도커허브에서 가져오기
 - docker images : 도커이미지 확인
