@@ -1,0 +1,20 @@
+# emqx 3.2.7 yaml
+
+version: '3'
+services:
+  emqx:
+    image: emqx/emqx:v3.2.7
+    hostname: 192.168.1.69
+    environment:
+    - EMQX_NAME=emqx69
+    - EMQX_HOST=192.168.1.69
+    - EMQX_NODE__NAME=emqx69@192.168.1.69
+    - EMQX_LOADED_PLUGINS="emqx_recon,emqx_retainer,emqx_management,emqx_dashboard,emqx_auth_username,emqx_bridge_mqtt"
+#    - EMQX_CLUSTER__NAME=emqxcl
+#    - EMQX_CLUSTER__DISCOVERY=static
+#    - EMQX_CLUSTER__STATIC__SEEDS=emqx70@192.168.1.70,emqx69@192.168.1.69
+    - EMQ_NODE__COOKIE=emqxsecretcookie
+    volumes:
+    - /docker/emq/emqx_bridge_mqtt.conf:/opt/emqx/etc/plugins/emqx_bridge_mqtt.conf
+    restart: unless-stopped
+    network_mode: host
