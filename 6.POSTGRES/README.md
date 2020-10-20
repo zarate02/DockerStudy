@@ -21,8 +21,7 @@ docker run --restart=always --name ggrpdpostgres --net=host -v /GGRPD/docker/dbd
 
 
 
-## docker - postgres 설치(성공)
-- docker pull postgres
+# ++ 
 
 ## 명령어
 docker run --restart=always --name some-mysql --net=host -e MYSQL_ROOT_PASSWORD=비번 -d mysql
