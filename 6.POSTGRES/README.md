@@ -15,13 +15,7 @@ docker run --restart=always --name ggrpdpostgres --net=host -v /GGRPD/docker/dbd
 - psql
 - CREATE ROLE wini LOGIN CREATEDB PASSWORD 'wini00';
 
-
-
-
-
-
-
-# ++ 
+# MYSQL 
 
 ## 명령어
 docker run --restart=always --name some-mysql --net=host -e MYSQL_ROOT_PASSWORD=비번 -d mysql
