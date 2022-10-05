@@ -11,3 +11,5 @@
 - grant dba to wini with admin option;
   
 - SELECT NAME, DB_UNIQUE_NAME FROM v$database;
+
+-Thankyou
